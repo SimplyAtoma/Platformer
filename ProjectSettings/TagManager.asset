@@ -6,11 +6,13 @@ TagManager:
   tags:
   - Brick
   - Question
+  - Obstacle
+  - Goal
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Bricks/Questions
   - Water
   - UI
   - 

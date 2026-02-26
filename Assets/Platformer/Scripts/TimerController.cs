@@ -4,7 +4,7 @@ using TMPro;
 public class TimerController : MonoBehaviour
 {
     public TMP_Text timerText;
-    float timerValue = 500;
+    float timerValue = 100;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,6 +15,11 @@ public class TimerController : MonoBehaviour
     void Update()
     {
         timerValue -= Time.deltaTime;
+        if (timerValue <= 0)
+        {
+            
+            Debug.Log("Player has run out of time!");
+        }
         timerText.text = $"TIME\n{((int)timerValue).ToString()}";
     }
 }

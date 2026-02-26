@@ -1,10 +1,12 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class BreakableBrickScripted : MonoBehaviour
 {
     [Header("Chunk Prefab")]
     [SerializeField] private GameObject chunkPrefab;
+    [SerializeField] private TMP_Text pointsText;
 
     [Header("Break Settings")]
     [SerializeField] private float duration = 0.35f;
@@ -16,6 +18,7 @@ public class BreakableBrickScripted : MonoBehaviour
     public void Break()
     {
         StartCoroutine(BreakRoutine());
+        CoinUI.Instance.AddCoins(0);
     }
 
     private IEnumerator BreakRoutine()
